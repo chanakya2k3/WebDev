@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chanakya Shivaji</title>
+  <style>
+    /* 1) Reset & ensure full-height, no scrolling */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* 2) Full-page gradient background */
+    body {
+      background: linear-gradient(135deg, #363637 5%, #000000 70%);
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;                             
+    }
+
+    /* 3) Nav on top, transparent */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: transparent;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color .2s;
+    }
+    nav a:hover { color: #9cdf0a; }
+
+    /* 4) Hero takes full viewport */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid rgba(255,255,255,0.75);
+    }
+
+    /* 5) Responsive tweaks */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      nav { padding: .5rem 1rem; }
+      nav a { margin-left: 1rem; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/resume.pdf" target="_blank">Resume</a>
+    <a href="https://github.com/chanakyashivaji" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/chanakyashivaji" target="_blank">LinkedIn</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1 id="typewriter"></h1>
+  </section>
+
+  <script>
+    // Typewriter Effect
+    const text = 'Hi, I am Chanakya Shivaji';
+    const el = document.getElementById('typewriter');
+    let idx = 0;
+
+    function type() {
+      if (idx < text.length) {
+        el.textContent += text[idx++];
+        setTimeout(type, 100);
+      } else {
+        el.style.borderRight = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', type);
+  </script>
+</body>
+</html>

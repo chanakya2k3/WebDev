@@ -1,0 +1,5 @@
+Introduced to js
+Understood Async & sync
+Fs library
+Learned js defined class Map
+##Have a look at Data Class in Js
